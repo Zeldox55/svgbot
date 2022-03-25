@@ -1,0 +1,10 @@
+{
+    "languages": ["english", "arabic", "french"],
+    "translations": {
+        "You_Dont_Have_Permission": {
+            "ensglish": "You dont have Permission",
+            "arabic": "ليست لديك رتبة",
+            "frensh": "Vous n'avez pas la Permission"
+        }
+    }
+}
