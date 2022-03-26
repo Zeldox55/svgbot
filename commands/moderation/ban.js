@@ -17,7 +17,7 @@ module.exports = {
         const server = await serverSchema.findOne({guildId: message.guild.id});
         const target =  message.mentions.members.first() || message.guild.members.cache.find(member => member.id === args[0]);
         if(!message.member.permissions.has(Permissions.FLAGS.KICK_MEMBERS || Permissions.FLAGS.ADMINISTRATOR)) return embed.Permission(client, message);
-        if(!args[0]) return embed.BanUsage(client, message, server);
+        if(!args[0]) return embed.BanUsage(message, server);
         if(!target) return embed.CantFind(message);
         if(target === message.member) return embed.SelfBan(message);
         if(target.id === client.user.id) return embed.BotBan(message);
