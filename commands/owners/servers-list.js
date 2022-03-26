@@ -11,7 +11,7 @@ module.exports = {
         accessableby: "",
         cooldown: '',
     run: async (client, message, args) => {
-        if(message.author.id != config.owner) return;
+        if(message.author.id !=== config.owner) return;
 
 
         let guilds = client.guilds.cache.map(r => {
