@@ -100,7 +100,7 @@ client.on("guildMemberAdd", async(member) => {
   if(server.welcomeStatus === "off") return;
   const WelcomeChannel = member.guild.channels.cache.find(channel => channel.id == server.welcomeId);
   const { registerFont } = require("canvas");
-  registerFont("./Fonts/BebasNeue-Regular.ttf", { family: "myFont }) 
+  registerFont("./Fonts/BebasNeue-Regular.ttf", { family: "myFont" }) 
   if(!WelcomeChannel) {
     let Channel = await serverModel.findOneAndUpdate({
     guildId: member.guild.id},{
