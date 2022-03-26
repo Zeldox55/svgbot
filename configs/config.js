@@ -3,6 +3,6 @@ module.exports = {
     prefix: "+",
     version: "1.0.1",
     mongo_uri: process.env.MONGO,
-    owner: ["445167016765292545", "571013902230355998", "709089739218616351"]
+    owner: ["445167016765292545"]
   };
   
