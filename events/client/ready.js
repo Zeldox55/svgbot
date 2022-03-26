@@ -13,7 +13,7 @@ module.exports = async (client, message) => {
     console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username} Logged In!`);
     //client.user.setPresence({status: "dnd"});
     console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Now ` + totalChannels + ` channels, ` + totalGuilds + ` Servers and ` + totalUsers + ` serving  users!`);
-    client.user.setActivity(`${config.prefix}help`, { type: 'STREAMING' });
+    client.user.setActivity(`${config.prefix}help`, { type: 'PLAYING' });
 
 
     const embedLogin = new MessageEmbed()
