@@ -99,6 +99,8 @@ client.on("guildMemberAdd", async(member) => {
   const server = await serverModel.findOne({guildId: member.guild.id});
   if(server.welcomeStatus === "off") return;
   const WelcomeChannel = member.guild.channels.cache.find(channel => channel.id == server.welcomeId);
+  const { registerFont } = require("canvas");
+  registerFont("./Fonts/BebasNeue-Regular.ttf", { family: "myFont }) 
   if(!WelcomeChannel) {
     let Channel = await serverModel.findOneAndUpdate({
     guildId: member.guild.id},{
@@ -121,17 +123,17 @@ client.on("guildMemberAdd", async(member) => {
         Name = member.user.username.split('',7)
         Username = Name.join('') + "...#" + member.user.discriminator
         ctx.fillStyle = '#ffffff';
-        ctx.font = '56px sans-serif';
+        ctx.font = "56px 'myFont'";
         ctx.fillText(Username, 650, 393);
       } else {
         Username = member.user.username + "#" + member.user.discriminator
         ctx.fillStyle = '#ffffff';
-        ctx.font = '60px sans-serif';
+        ctx.font = "60px 'myFont'";
         ctx.fillText(Username, 650, 393);
       }
       UserID = "ID: " + member.user.id
       ctx.fillStyle = '#ffffff';
-      ctx.font = '19px sans-serif';
+      ctx.font = "19px 'myFont'";
       ctx.fillText(UserID, 604, 482);
       const pfp = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'png' }))
 
