@@ -78,7 +78,7 @@ module.exports = {
 
         if(args[0] === "disable") {
             if(server.welcomeId === null) return embed.setWelcome(message);
-            if(!message.guild.channel.cache.get(server.welcomeId)) {
+            if(!message.guild.channels.cache.get(server.welcomeId)) {
                 await serverModel.findOneAndUpdate({
                     guildId: message.guild.id},{
                     welcomeId: null,
