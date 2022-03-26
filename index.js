@@ -94,7 +94,7 @@ client.on("guildMemberAdd", async(member) => {
   }
 })
 
-
+try {
 client.on("guildMemberAdd", async(member) => {
   const server = await serverModel.findOne({guildId: member.guild.id});
   if(server.welcomeStatus === "off") return;
@@ -155,6 +155,9 @@ client.on("guildMemberAdd", async(member) => {
     }
   }
 })
+} catch (err) {
+console.log(err);
+}
 
 // EVENTS
 
