@@ -2,6 +2,8 @@ const { Discord, MessageEmbed, Util, Permissions, InviteStageInstance } = requir
 const config = require('../../configs/config.js');
 const emoji = require('../../configs/emotes.json');
 
+const { owner } = require('../../configs/config.js');
+
 
 module.exports = {
         name: 'servers-list',
@@ -11,7 +13,7 @@ module.exports = {
         accessableby: "",
         cooldown: '',
     run: async (client, message, args) => {
-        if(message.author.id != config.owner) return;
+        if(message.author.id != owner) return;
 
 
         let guilds = client.guilds.cache.map(r => {
